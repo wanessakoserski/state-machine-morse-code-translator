@@ -1,0 +1,118 @@
+Tradutor de código morse
+~ esse tradutor utilizar a transição de estados
+~ insira . ou -
+~ importante ser um de cada vez, ou seja, insira ./- e de ENTER para transicionar o estado
+~ quando terminar a sequência ./- da letra tecle ENTER para processar o fim da letra
+~ caso também seja fim da palavra também, decle novamente ENTER para processar o fim da palavra e inserir espaço
+~ caso não haja mais nenhuma palavra, tecle novamente ENTER para finalizar a tradução
+~ 1º ENTER: fim de letra, 2º ENTER: fim de palavra, 3º ENTER: fim de tradução
+
+
+Digite a sequência:
+> -
+> .
+> -
+> .
+>
+>>> end of letter
+> -
+> -
+> -
+>
+>>> end of letter
+> -
+> .
+> .
+>
+>>> end of letter
+> .
+> .
+>
+>>> end of letter
+> -
+> -
+> .
+>
+>>> end of letter
+> -
+> -
+> -
+>
+>>> end of letter
+>
+>>> end of word
+> -
+> -
+>
+>>> end of letter
+> -
+> -
+> -
+>
+>>> end of letter
+> .
+> -
+> .
+>
+>>> end of letter
+> .
+> .
+> .
+>
+>>> end of letter
+> .
+>
+>>> end of letter
+>
+>>> end of word
+> -
+> .
+> .
+>
+>>> end of letter
+> .
+>
+>>> end of letter
+>
+>>> end of word
+> .
+>
+>>> end of letter
+> -
+> .
+> .
+> -
+>
+>>> end of letter
+> .
+>
+>>> end of letter
+> -
+> -
+>
+>>> end of letter
+> .
+> -
+> -
+> .
+>
+>>> end of letter
+> .
+> -
+> .
+> .
+>
+>>> end of letter
+> -
+> -
+> -
+>
+>>> end of letter
+>
+>>> end of word
+>
+>>> end of translation
+
+== tradução ocorreu com sucesso ==
+
+Tradução: CODIGO MORSE DE EXEMPLO
