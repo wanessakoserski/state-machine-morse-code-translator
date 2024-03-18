@@ -8,6 +8,11 @@ class FromMorseCode
     @translation
   end
 
+  def end_of_letter
+    print ">>> end of letter\n"
+    return :q0
+  end
+
   def start
     state = :q0
     @translation = ''
@@ -116,6 +121,9 @@ class FromMorseCode
       in [:q19, '.']
         state = :q41
 
+      in [:q19, '-']
+        state = :q40
+
       in [:q20, '.']
         state = :q44
 
@@ -176,162 +184,165 @@ class FromMorseCode
       ## return of letters ##
       in [:q4, '']
         @translation << 'A'
-        state = :q0
+        state = end_of_letter
 
       in [:q44, '']
         @translation << 'B'
-        state = :q0
+        state = end_of_letter
 
       in [:q41, '']
         @translation << 'C'
-        state = :q0
+        state = end_of_letter
 
       in [:q20, '']
         @translation << 'D'
-        state = :q0
+        state = end_of_letter
 
       in [:q1, '']
         @translation << 'E'
-        state = :q0
+        state = end_of_letter
 
       in [:q24, '']
         @translation << 'F'
-        state = :q0
+        state = end_of_letter
 
       in [:q17, '']
         @translation << 'G'
-        state = :q0
+        state = end_of_letter
 
       in [:q21, '']
         @translation << 'H'
-        state = :q0
+        state = end_of_letter
 
       in [:q3, '']
         @translation << 'I'
-        state = :q0
+        state = end_of_letter
 
       in [:q31, '']
         @translation << 'J'
-        state = :q0
+        state = end_of_letter
 
       in [:q19, '']
         @translation << 'K'
-        state = :q0
+        state = end_of_letter
 
       in [:q27, '']
         @translation << 'L'
-        state = :q0
+        state = end_of_letter
 
       in [:q7, '']
         @translation << 'M'
-        state = :q0
+        state = end_of_letter
 
       in [:q8, '']
         @translation << 'N'
-        state = :q0
+        state = end_of_letter
 
       in [:q16, '']
         @translation << 'O'
-        state = :q0
+        state = end_of_letter
 
       in [:q30, '']
         @translation << 'P'
-        state = :q0
+        state = end_of_letter
 
       in [:q37, '']
         @translation << 'Q'
-        state = :q0
+        state = end_of_letter
 
       in [:q12, '']
         @translation << 'R'
-        state = :q0
+        state = end_of_letter
 
       in [:q9, '']
         @translation << 'S'
-        state =:q0
-        print ">>> end of letter\n"
+        state = end_of_letter
 
       in [:q2, '']
         @translation << 'T'
-        state = :q0
+        state = end_of_letter
 
       in [:q10, '']
         @translation << 'U'
-        state = :q0
+        state = end_of_letter
 
       in [:q22, '']
         @translation << 'V'
-        state = :q0
+        state = end_of_letter
 
       in [:q13, '']
         @translation << 'W'
-        state = :q0
+        state = end_of_letter
 
       in [:q43, '']
         @translation << 'X'
-        state = :q0
+        state = end_of_letter
+
+      in [:q40, '']
+        @translation << 'Y'
+        state = end_of_letter
 
       in [:q38, '']
         @translation << 'Z'
-        state = :q0
+        state = end_of_letter
 
       ## return of numbers ##
       in [:q67, '']
         @translation << '1'
-        state = :q0
+        state = end_of_letter
 
-      in [:q25, '']
+      in [:q55, '']
         @translation << '2'
-        state = :q0
+        state = end_of_letter
 
       in [:q49, '']
         @translation << '3'
-        state = :q0
+        state = end_of_letter
 
       in [:q46, '']
         @translation << '4'
-        state = :q0
+        state = end_of_letter
 
       in [:q45, '']
         @translation << '5'
-        state = :q0
+        state = end_of_letter
 
       in [:q92, '']
         @translation << '6'
-        state = :q0
+        state = end_of_letter
 
       in [:q80, '']
         @translation << '7'
-        state = :q0
+        state = end_of_letter
 
       in [:q74, '']
         @translation << '8'
-        state = :q0
+        state = end_of_letter
 
       in [:q71, '']
         @translation << '9'
-        state = :q0
+        state = end_of_letter
 
       in [:q70, '']
         @translation << '0'
-        state = :q0
+        state = end_of_letter
 
       ## return of symbols ##
       in [:q103, '']
         @translation << ','
-        state = :q0
+        state = end_of_letter
 
       in [:q98, '']
         @translation << '.'
-        state = :q0
+        state = end_of_letter
 
       in [:q105, '']
         @translation << '-'
-        state = :q0
+        state = end_of_letter
 
       in [:q96, '']
         @translation << '?'
-        state = :q0
+        state = end_of_letter
 
       ## if the inserted input falls into an invalid state, the translation is interrupted ##
       else
