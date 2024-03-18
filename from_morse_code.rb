@@ -1,5 +1,3 @@
-require 'io/console'
-
 class FromMorseCode
   def read_next
     print '> '
@@ -19,19 +17,28 @@ class FromMorseCode
 
       case [state, input]
       ## translation stop condition and successful return of translated characters ##
-      in [:q0, '']
+      in [:q111, '']
+        print ">>> end of translation\n"
         print "\n== tradução ocorreu com sucesso ==\n"
         print "\nTradução: " + @translation + "\n"
         break
 
       ## character that determines the end of the word ##
-      in [:q0, ' ']
+      in [:q0, '']
         @translation << ' '
+        state = :q111
+        print ">>> end of word\n"
 
       in [:q0, '.']
         state = :q1
 
       in [:q0, '-']
+        state = :q2
+
+      in [:q111, '.']
+        state = :q1
+
+      in [:q111, '-']
         state = :q2
 
       in [:q1, '-']
@@ -242,6 +249,7 @@ class FromMorseCode
       in [:q9, '']
         @translation << 'S'
         state =:q0
+        print ">>> end of letter\n"
 
       in [:q2, '']
         @translation << 'T'
